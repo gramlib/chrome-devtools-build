@@ -31,10 +31,11 @@ jobs:
     - name: build
       run: |
         git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-        pwd
         echo "$(pwd)/depot_tools" >> $GITHUB_PATH
+        ls "$(pwd)/depot_tools"
         mkdir devtools
         cd devtools
+        echo "$PATH"
         fetch devtools-frontend
         cd devtools-frontend
         gn gen out/Default
